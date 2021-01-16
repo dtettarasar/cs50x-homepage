@@ -1,0 +1,162 @@
+/* main rules */
+
+.navbar,
+footer
+{
+    background-color: #2b2f39;
+}
+
+.container
+{
+    margin-top: 30px;
+}
+
+.welcome-section
+{
+    background: url(../img/img-intro.jpg);
+    padding: 0;
+}
+
+.welcome-content
+{
+    background: rgba(24, 43, 97, 0.7);
+    height: 100vh;
+    color: #fff;
+    text-align: center;
+    padding-top: 25vh;
+}
+
+.welcome-content .row
+{
+    align-content: center;
+}
+
+section
+{
+    margin-bottom: 30px;
+}
+
+.welcome-section h1
+{
+    font-size: 2.5rem;
+}
+
+.baseline
+{
+    margin-top: 30px;
+    font-size: 1.5625rem;
+}
+
+.welcome-content a
+{
+    font-size: 1.5rem;
+    margin: 10px;
+}
+
+.heading-section
+{
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.jumbotron
+{
+    background-color: #2b2f39;
+    color: #fff;
+}
+
+.usp-text
+{
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+footer
+{
+    color:#fff;
+    padding: 30px;
+}
+
+/* end of main rules */
+
+/* rules for responsive design */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px)
+{
+
+    .welcome-section h1
+    {
+        font-size: 3.125rem;
+    }
+
+    .baseline
+    {
+        font-size: 1.875rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px)
+{
+
+    .welcome-section h1
+    {
+        font-size: 3.75rem;
+    }
+
+    .baseline
+    {
+        font-size: 2.1875rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px)
+{
+
+    .welcome-section h1
+    {
+        font-size: 4.375rem;
+    }
+
+    .baseline
+    {
+        font-size: 2.5rem;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */ 
+@media (min-width: 1200px)
+{
+
+    .welcome-section h1
+    {
+        font-size: 5rem;
+    }
+
+    .baseline
+    {
+        font-size: 2.8125rem;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px)
+{
+
+    .welcome-section h1
+    {
+        font-size: 5.625rem;
+    }
+
+    .baseline
+    {
+        font-size: 3.125rem;
+    }
+}
+
+/* end of rules for responsive design */

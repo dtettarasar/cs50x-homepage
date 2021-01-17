@@ -67,12 +67,45 @@ section
     color: #fff;
 }
 
+.picto-usp
+{
+    max-width: 110px;
+    margin: 20px auto;
+    display: block;
+}
+
 .usp-text
 {
     text-align: center;
     font-size: 1.3rem;
     font-weight: bold;
 }
+
+/* speaker info */
+
+.speaker-info
+{
+    text-align: center;
+}
+
+.speaker-name
+{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.speaker-title
+{
+    font-size: 1.2rem;
+}
+
+.speaker-company
+{
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+/* end speaker info */
 
 footer
 {

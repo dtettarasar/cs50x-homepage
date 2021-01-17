@@ -88,6 +88,19 @@ section
     text-align: center;
 }
 
+.speaker-info p
+{
+    margin-bottom: 5px;
+}
+
+.speaker-picture
+{
+    max-width: 130px;
+    margin: 30px auto;
+    border: 4px solid #2b2f39;
+    border-radius: 50%;
+}
+
 .speaker-name
 {
     font-size: 1.5rem;

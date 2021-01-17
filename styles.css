@@ -132,6 +132,26 @@ section
 
 /* end speaker info */
 
+/* key figures section */
+
+.figures-section
+{
+    text-align: center;
+}
+
+.figure-num
+{
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.figure-title
+{
+    font-size: 1.8rem;
+}
+
+/* end of key figures section */
+
 footer
 {
     color:#fff;

@@ -48,6 +48,17 @@ section
     font-size: 1.5625rem;
 }
 
+.heading-icon
+{
+    font-size: 2.3rem;
+}
+
+.heading-icon::before
+{
+    text-align: center;
+    display: block;
+}
+
 .welcome-content a
 {
     font-size: 1.5rem;
@@ -58,7 +69,7 @@ section
 {
     font-size: 2.5rem;
     margin-bottom: 30px;
-    margin-top: 15px;
+    margin-top: 10px;
     text-align: center;
 }
 

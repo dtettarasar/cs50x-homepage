@@ -169,6 +169,11 @@ footer
     padding: 30px;
 }
 
+footer ul li
+{
+    list-style-type:none;
+}
+
 /* end of main rules */
 
 /* rules for responsive design */
@@ -218,7 +223,7 @@ footer
     }
 }
 
-/* X-Large devices (large desktops, 1200px and up) */ 
+/* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px)
 {
 

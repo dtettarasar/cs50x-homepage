@@ -14,6 +14,7 @@ footer
 .welcome-section
 {
     background: url(img/img-intro.jpg);
+    background-size:cover;
     padding: 0;
     margin-bottom: 0;
 }

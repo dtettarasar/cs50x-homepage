@@ -167,6 +167,11 @@ section
 
 /* venue section */
 
+.date-venue-intro
+{
+    margin-bottom: 20px;
+}
+
 .venue-title
 {
     font-size: 2rem;
@@ -186,6 +191,17 @@ section
 }
 
 /* end of venue section */
+
+/* partners section */
+
+.partners-section img
+{
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* end of partners section */
 
 footer
 {

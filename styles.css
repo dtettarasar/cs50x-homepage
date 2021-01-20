@@ -78,6 +78,12 @@ section
 {
     margin-bottom: 0px;
     border-radius: 0;
+    border-bottom:solid 6px #3498db;
+}
+
+.jumbotron:last-child
+{
+    border:none;
 }
 
 .jumbotron-dark
@@ -194,11 +200,21 @@ section
 
 /* partners section */
 
-.partners-section img
+.partners-section svg
 {
     max-width: 400px;
     display: block;
     margin: 0 auto;
+    fill: #ecf0f1;
+    -webkit-transition: fill 0.4s; /* For Safari 3.1 to 6.0 */
+    -moz-transition: fill 0.4s;
+    -o-transition: fill 0.4s;
+    transition: fill 0.4s;
+}
+
+.partners-section svg:hover
+{
+    fill: #3498db;
 }
 
 /* end of partners section */

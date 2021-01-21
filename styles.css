@@ -228,6 +228,24 @@ section
 
 /* end of partners section */
 
+/* about us section */
+
+.about-us-logo svg
+{
+    max-width:300px;
+    display:block;
+    margin: 0 auto;
+    fill: #3498db;
+}
+
+.about-us-text
+{
+    text-align:center;
+    font-size:1.4rem;
+}
+
+/* end of about us section */
+
 footer
 {
     color:#fff;

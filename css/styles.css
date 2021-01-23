@@ -257,6 +257,40 @@ footer ul li
     list-style-type:none;
 }
 
+/* style for go to top button */
+
+.btn-to-top {
+    height: 60px;
+    width: 60px;
+    background-color: #ecf0f1;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 40px;
+    border: solid 4px #3498db;
+    display: none;
+    -webkit-transition: background-color 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: background-color 0.5s;
+  }
+  
+  .btn-to-top svg {
+    display: block;
+    margin: 6px auto;
+    fill:#2c3e50;
+    -webkit-transition: fill 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: fill 0.5s;
+  }
+  
+  .btn-to-top:hover {
+    background-color: #3498db;
+  }
+  
+  .btn-to-top:hover svg {
+    fill:#ecf0f1;
+  }
+
+/* end of style for go to top button */
+
 /* end of main rules */
 
 /* rules for responsive design */

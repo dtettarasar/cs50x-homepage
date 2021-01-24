@@ -19,9 +19,14 @@ footer
     margin: 0 auto;
 }
 
-.welcome-content
+.welcome-section .container-fluid
 {
     background: rgba(44, 62, 80, 0.6);
+    margin: 0;
+}
+
+.welcome-content
+{
     height: 100vh;
     color: #fff;
     text-align: center;
@@ -272,7 +277,7 @@ footer ul li
     -webkit-transition: background-color 0.5s; /* For Safari 3.1 to 6.0 */
     transition: background-color 0.5s;
   }
-  
+
   .btn-to-top svg {
     display: block;
     margin: 6px auto;
@@ -280,11 +285,11 @@ footer ul li
     -webkit-transition: fill 0.5s; /* For Safari 3.1 to 6.0 */
     transition: fill 0.5s;
   }
-  
+
   .btn-to-top:hover {
     background-color: #3498db;
   }
-  
+
   .btn-to-top:hover svg {
     fill:#ecf0f1;
   }

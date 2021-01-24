@@ -276,6 +276,27 @@ footer ul li
     list-style-type:none;
 }
 
+/* style for program page */
+
+.agenda-hour-icon
+{
+    display: block;
+    text-align: center;
+}
+
+.agenda-hour
+{
+    text-align:center;
+    font-size:1.6rem;
+}
+
+.speaker-list
+{
+    font-size:1.3rem;
+}
+
+/* end of style for program page */
+
 /* style for go to top button */
 
 .btn-to-top {

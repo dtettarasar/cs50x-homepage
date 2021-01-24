@@ -11,7 +11,8 @@ footer
     margin-top: 30px;
 }
 
-.welcome-section
+.welcome-section,
+.top-banner
 {
     background: url(../img/img-intro.jpg);
     background-size:cover;
@@ -19,21 +20,33 @@ footer
     margin: 0 auto;
 }
 
-.welcome-section .container-fluid
+.welcome-section .container-fluid,
+.top-banner .container-fluid
 {
     background: rgba(44, 62, 80, 0.6);
     margin: 0;
 }
 
+.welcome-content,
+.banner-content
+{
+    color: #fff;
+    text-align: center;
+}
+
+.banner-content
+{
+    padding : 30px 0;
+}
+
 .welcome-content
 {
     height: 100vh;
-    color: #fff;
-    text-align: center;
     padding-top: 25vh;
 }
 
-.welcome-content .row
+.welcome-content .row,
+.banner-content .row
 {
     align-content: center;
 }
@@ -65,7 +78,8 @@ section
     display: block;
 }
 
-.welcome-content a
+.welcome-content a,
+.intro-content a
 {
     font-size: 1.5rem;
     margin: 10px;
@@ -309,9 +323,14 @@ footer ul li
         font-size: 3.125rem;
     }
 
-    .baseline
+    .baseline-big
     {
         font-size: 1.875rem;
+    }
+
+    .baseline-small
+    {
+        font-size: 1.1rem;
     }
 }
 
@@ -324,9 +343,14 @@ footer ul li
         font-size: 3.75rem;
     }
 
-    .baseline
+    .baseline-big
     {
         font-size: 2.1875rem;
+    }
+
+    .baseline-small
+    {
+        font-size: 1.4rem;
     }
 }
 
@@ -339,9 +363,14 @@ footer ul li
         font-size: 4.375rem;
     }
 
-    .baseline
+    .baseline-big
     {
         font-size: 2.5rem;
+    }
+
+    .baseline-small
+    {
+        font-size: 1.7rem;
     }
 }
 
@@ -354,9 +383,14 @@ footer ul li
         font-size: 5rem;
     }
 
-    .baseline
+    .baseline-big
     {
         font-size: 2.8125rem;
+    }
+
+    .baseline-small
+    {
+        font-size: 2rem;
     }
 }
 
@@ -369,9 +403,14 @@ footer ul li
         font-size: 5.625rem;
     }
 
-    .baseline
+    .baseline-big
     {
         font-size: 3.125rem;
+    }
+
+    .baseline-small
+    {
+        font-size: 2.3rem;
     }
 }
 

@@ -131,6 +131,14 @@ section
     font-weight: bold;
 }
 
+.separator-line
+{
+    height: 2px;
+    background-color: #3498db;
+    margin: 30px auto;
+    width: 100%;
+}
+
 /* speaker info */
 
 .speaker-info
@@ -293,6 +301,34 @@ footer ul li
 .speaker-list
 {
     font-size:1.3rem;
+}
+
+.hour-title
+{
+    background-color: #2b2f39;
+    border-radius: 20px;
+    padding-top: 30px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hour-title h2
+{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.agenda-content
+{
+    margin-top:0px;
+    padding: 20px;
+}
+
+.picto-program
+{
+    max-width: 60px;
+    margin: 20px auto;
+    display: block;
 }
 
 /* end of style for program page */

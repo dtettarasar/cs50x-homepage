@@ -21,10 +21,22 @@ btnTop.addEventListener("click",goToTop);
 
 // script for counters
 
-const counterNodeList = document.querySelectorAll("[id^=counter-]");
-console.log(counterNodeList[0]);
-console.log(counterNodeList.length);
-counterNodeList[0].innerHTML = 12;
+function counterAnimation()
+{
+  const counterNodeList = document.querySelectorAll("[id^=counter-]");
+  const numbersArray = [7, 80, 5];
+
+  console.log(numbersArray);
+  console.log(counterNodeList[0]);
+  console.log(counterNodeList.length);
+  counterNodeList[0].innerHTML = 12;
+}
+
+//only execute the function if the figure section exists
+if(document.getElementById("figures-section"))
+{
+  counterAnimation();
+}
 
 
 // end of script for counters

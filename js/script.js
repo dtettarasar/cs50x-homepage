@@ -34,10 +34,11 @@ function logScroll()
 //we have to do the counter animation only once. This bool is here to track that
 let counterDone = false;
 
-function counterAnimation()
+const counterNodeList = document.querySelectorAll("[id^=counter-]");
+const numbersArray = [7, 80, 5];
+
+function counterAnimation(counterDiv, index)
 {
-  const counterNodeList = document.querySelectorAll("[id^=counter-]");
-  const numbersArray = [7, 80, 5];
 
   if (numbersArray.length != counterNodeList.length)
   {
@@ -45,10 +46,20 @@ function counterAnimation()
     return false;
   }
 
-  console.log(numbersArray);
-  console.log(counterNodeList[0]);
-  console.log(counterNodeList.length);
-  counterNodeList[0].innerHTML = 12;
+  counterDiv.innerHTML = numbersArray[index];
+
+  let counter = 0;
+
+  let i = setInterval(function()
+  {
+    console.log(counter);
+    counter++;
+    if (counter === 10)
+    {
+      clearInterval(i);
+    }
+  }, 200);
+
 }
 
 function execAnimation(sectionTop)
@@ -58,7 +69,7 @@ function execAnimation(sectionTop)
   // check if we reached the figure section on the page & if the animation hasn't already been done
   if(scrollPosition >= sectionTop && counterDone == false)
     {
-      counterAnimation();
+      //counterAnimation(counterNodeList[0], 0);
       counterDone = true;
     }
 }

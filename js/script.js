@@ -40,6 +40,7 @@ const numbersArray = [7, 80, 5];
 function counterAnimation(counterDiv, index)
 {
 
+  // if the numbersArray and the counterNodeList don't have the same length, there will be an error. the condition below is here to prevent that
   if (numbersArray.length != counterNodeList.length)
   {
     console.log("warning : numbersArray.length & counterNodeList.length are different");
@@ -48,6 +49,7 @@ function counterAnimation(counterDiv, index)
 
   let counter = 0;
 
+  //Define a variable for the interval, to make sure each countdown finish their animation at roughly at the same time
   let time = 1600 / numbersArray[index];
 
   let i = setInterval(function()

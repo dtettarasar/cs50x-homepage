@@ -46,19 +46,19 @@ function counterAnimation(counterDiv, index)
     return false;
   }
 
-  counterDiv.innerHTML = numbersArray[index];
-
   let counter = 0;
+
+  let time = 1600 / numbersArray[index];
 
   let i = setInterval(function()
   {
-    console.log(counter);
+    counterDiv.innerHTML = counter;
     counter++;
-    if (counter === 10)
+    if (counter === numbersArray[index] + 1)
     {
       clearInterval(i);
     }
-  }, 200);
+  }, time);
 
 }
 
@@ -69,7 +69,11 @@ function execAnimation(sectionTop)
   // check if we reached the figure section on the page & if the animation hasn't already been done
   if(scrollPosition >= sectionTop && counterDone == false)
     {
-      //counterAnimation(counterNodeList[0], 0);
+      for (let j = 0; j < numbersArray.length; j++)
+      {
+        counterAnimation(counterNodeList[j], j);
+        console.log(j);
+      }
       counterDone = true;
     }
 }

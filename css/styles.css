@@ -237,11 +237,16 @@ img[class*='speaker-picture']
 
 /* partners section */
 
+.partners-page svg,
 .partners-section svg
 {
     max-width: 400px;
     display: block;
     margin: 0 auto;
+}
+
+.partners-section svg
+{
     fill: #ecf0f1;
     -webkit-transition: fill 0.4s; /* For Safari 3.1 to 6.0 */
     -moz-transition: fill 0.4s;
@@ -351,6 +356,21 @@ footer ul li
 }
 
 /* end of style for speaker page */
+
+/* style for partners page */
+
+.partners-page svg
+{
+    fill:#2c3e50;
+}
+
+.partner-logo-title
+{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+/* end of style for partners page */
 
 /* style for go to top button */
 

@@ -374,6 +374,12 @@ footer ul li
 
 /* style for register page */
 
+.registration-intro p
+{
+    font-size:1.2rem;
+    text-align:center;
+}
+
 .form-section-heading
 {
     font-size: 1.8rem;

@@ -165,9 +165,9 @@
                           <label for="topics">UX Design</label>
                         </div>
                         <div>
-                          <input type="checkbox" id="other-checkbox" value="topic-other" name="topic-other">
+                          <input type="checkbox" id="other-topics-checkbox" value="topic-other" name="topic-other">
                           <label for="topics">Other: please specify</label>
-                          <input type="text" id="other-text" name="other-text" />
+                          <input type="text" id="other-topics-text" name="other-text" />
                         </div>
                       </div>
                       <div class="text-container">
@@ -195,7 +195,18 @@
         </main>
         <script>
           //window.alert("hello world");
-          //const otherCheckBox = document.querySelector("");
+          const otherTopicsCheckBox = document.querySelector("#other-topics-checkbox");
+          const otherTopicsText = document.querySelector("#other-topics-text");
+
+          function textFocus()
+          {
+            if(otherTopicsCheckBox.checked)
+            {
+              otherTopicsText.focus();
+            }
+          }
+
+          otherTopicsCheckBox.addEventListener("click", textFocus);
         </script>
         <footer>
           <div class="container text-center">

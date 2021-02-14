@@ -372,9 +372,79 @@ footer ul li
 
 /* end of style for partners page */
 
+/* style for register page */
+
+form label,
+form p[class$="-label"]
+{
+    font-size:1.2rem;
+}
+
+input, select
+{
+  padding:5px;
+  font-size:1.1rem;
+}
+
+input:invalid
+{
+  border: 3px dashed #c0392b;
+}
+
+input:valid
+{
+  border: 3px solid #27ae60;
+}
+
+.field-container,
+.radio-container,
+.checkbox-container,
+.text-container
+{
+  border: solid 3px #2c3e50;
+  border-radius:6px;
+  padding:10px;
+  margin: 10px auto;
+}
+
+.field-container, [class*="label"] {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.field-container input {
+  flex:1 0 250px;
+}
+
+.field-container *, [class*="label"] p {
+   margin:5px;
+}
+
+.field-container i, [class*="label"] i {
+  font-size:34px;
+  flex: 0 0 40px;
+}
+
+#submit {
+  background-color: #3498db;
+  color: #ecf0f1;
+  border:none;
+  font-size:24px;
+  padding:10px;
+  border-radius:5px;
+}
+
+textarea {
+  font-size:18px;
+  display:block;
+}
+
+/* end of style for register page */
+
 /* style for go to top button */
 
-.btn-to-top {
+.btn-to-top
+{
     height: 60px;
     width: 60px;
     background-color: #ecf0f1;
@@ -388,7 +458,8 @@ footer ul li
     transition: background-color 0.5s;
   }
 
-  .btn-to-top svg {
+  .btn-to-top svg
+  {
     display: block;
     margin: 6px auto;
     fill:#2c3e50;
@@ -396,11 +467,13 @@ footer ul li
     transition: fill 0.5s;
   }
 
-  .btn-to-top:hover {
+  .btn-to-top:hover
+  {
     background-color: #3498db;
   }
 
-  .btn-to-top:hover svg {
+  .btn-to-top:hover svg
+  {
     fill:#ecf0f1;
   }
 

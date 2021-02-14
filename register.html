@@ -194,10 +194,14 @@
           </div>
         </main>
         <script>
-          //window.alert("hello world");
+
+          // script for the other topics checkbox : dynamically change de input's status
+
+          // var to get checkbox and text field's element
           const otherTopicsCheckBox = document.querySelector("#other-topics-checkbox");
           const otherTopicsText = document.querySelector("#other-topics-text");
 
+          // function to focus on the other topics' text field, if you check its box
           function textFocus()
           {
             if(otherTopicsCheckBox.checked)
@@ -206,14 +210,26 @@
             }
           }
 
+          // function to check or uncheck the box, depending on the text field's content
           function otherTopicsCheck()
           {
-            console.log("text");
+            if(otherTopicsText.value == "")
+            {
+              // if text field empty : uncheck the box
+              otherTopicsCheckBox.checked = false;
+            }
+            else
+            {
+              // if there's something typed in the text field, check the box
+              otherTopicsCheckBox.checked = true;
+            }
           }
 
-          //otherTopicsCheckBox.addEventListener("change", otherTopicsCheck);
-
+          // addEventListeners
+          otherTopicsText.addEventListener("input", otherTopicsCheck);
           otherTopicsCheckBox.addEventListener("click", textFocus);
+
+          // end of script for the other topics checkbox
 
         </script>
         <footer>

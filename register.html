@@ -148,6 +148,28 @@
                         <input type="radio" name="workshop-selection" value="ws2"> <strong>Workshop 2</strong> : Game and Open Source Technologies <br>
                         <input type="radio" name="workshop-selection" value="ws3"> <strong>Workshop 3</strong> : Game and AI Innovation <br>
                       </div>
+                      <div class="checkbox-container">
+                        <div class="checkbox-label">
+                          <p>What topics are of particular interest to you?</p>
+                        </div>
+                        <div>
+                          <input type="checkbox" id="topic-programming" value="topic-programming" name="topic-programming">
+                          <label for="topics">Programming</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" id="topic-art" value="topic-art" name="topic-art">
+                          <label for="topics">Art</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" id="topic-ux-design" value="topic-ux-design" name="topic-ux-design">
+                          <label for="topics">UX Design</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" id="other-checkbox" value="topic-other" name="topic-other">
+                          <label for="topics">Other: please specify</label>
+                          <input type="text" id="other-text" name="other-text" />
+                        </div>
+                      </div>
                       <div class="text-container">
                         <label id="allergies-label">Do you have any food allergies or intolerances? If yes, list below.</label>
                         <textarea placeholder="nuts, fruit, shellfish, eggs..." name="allergies-field"></textarea>
@@ -171,6 +193,10 @@
             </section>
           </div>
         </main>
+        <script>
+          //window.alert("hello world");
+          //const otherCheckBox = document.querySelector("");
+        </script>
         <footer>
           <div class="container text-center">
             <p>Copyright &copy; Dylan Tettarasar, made for CS50x</p>

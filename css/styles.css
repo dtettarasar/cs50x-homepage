@@ -374,8 +374,17 @@ footer ul li
 
 /* style for register page */
 
+.form-section-heading
+{
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
 form label,
-form p[class$="-label"]
+form p[class$="-label"],
+.checkbox-label p
 {
     font-size:1.2rem;
 }
@@ -410,6 +419,7 @@ input:valid
 .field-container, [class*="label"] {
   display:flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .field-container input {
@@ -432,11 +442,14 @@ input:valid
   font-size:24px;
   padding:10px;
   border-radius:5px;
+  margin: 30px auto;
+  display: block;
 }
 
 textarea {
   font-size:18px;
   display:block;
+  width:100%;
 }
 
 /* end of style for register page */

@@ -19,15 +19,13 @@ btnTop.addEventListener("click",goToTop);
 
 // end of script for go to top button
 
-// script to get scroll position
+// function to get scroll position
 
 function logScroll()
 {
   let scroll = window.pageYOffset;
   return scroll;
 }
-
-// end of script to get scroll position
 
 // script for counters
 
@@ -93,3 +91,48 @@ if(document.getElementById("figures-section"))
 }
 
 // end of script for counters
+
+// script for the registration form
+
+// var to get checkbox and text field's element
+let otherTopicsCheckBox;
+let otherTopicsText;
+
+// only execute the script if the form is on the page
+
+if(document.getElementById("register-form"))
+{
+  otherTopicsCheckBox = document.querySelector("#other-topics-checkbox");
+  otherTopicsText = document.querySelector("#other-topics-text");
+
+  // addEventListeners
+  otherTopicsText.addEventListener("input", otherTopicsCheck);
+  otherTopicsCheckBox.addEventListener("click", textFocus);
+}
+
+
+// function to focus on the other topics' text field, if you check its box
+function textFocus()
+{
+  if(otherTopicsCheckBox.checked)
+  {
+    otherTopicsText.focus();
+  }
+}
+
+// function to check or uncheck the box, depending on the text field's content
+function otherTopicsCheck()
+{
+  if(otherTopicsText.value == "")
+  {
+    // if text field empty : uncheck the box
+    otherTopicsCheckBox.checked = false;
+  }
+  else
+  {
+    // if there's something typed in the text field, check the box
+    otherTopicsCheckBox.checked = true;
+  }
+}
+
+// end of script for the registration form

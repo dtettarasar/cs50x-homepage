@@ -210,51 +210,6 @@
             </section>
           </div>
         </main>
-        <script>
-
-          // script for the other topics checkbox : dynamically change de input's status
-
-          // var to get checkbox and text field's element
-          const otherTopicsCheckBox = document.querySelector("#other-topics-checkbox");
-          const otherTopicsText = document.querySelector("#other-topics-text");
-
-          // function to focus on the other topics' text field, if you check its box
-          function textFocus()
-          {
-            if(otherTopicsCheckBox.checked)
-            {
-              otherTopicsText.focus();
-            }
-          }
-
-          // function to check or uncheck the box, depending on the text field's content
-          function otherTopicsCheck()
-          {
-            if(otherTopicsText.value == "")
-            {
-              // if text field empty : uncheck the box
-              otherTopicsCheckBox.checked = false;
-            }
-            else
-            {
-              // if there's something typed in the text field, check the box
-              otherTopicsCheckBox.checked = true;
-            }
-          }
-
-          // addEventListeners
-          otherTopicsText.addEventListener("input", otherTopicsCheck);
-          otherTopicsCheckBox.addEventListener("click", textFocus);
-
-          // end of script for the other topics checkbox
-
-          // main script for the form
-
-          // TO COMPLETE
-
-          // end of main script for the form
-
-        </script>
         <footer>
           <div class="container text-center">
             <p>Copyright &copy; Dylan Tettarasar, made for CS50x</p>

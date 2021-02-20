@@ -127,7 +127,11 @@ function getAttendeeInfos()
     lastName : document.querySelector("#last-name-input").value,
     title : document.querySelector("#job-title-input").value,
     email : document.querySelector("#email-input").value,
-    phone : document.querySelector("#phone-input").value
+    phone : document.querySelector("#phone-input").value,
+    companyName : document.querySelector("#company-input").value,
+    companyAddress : document.querySelector("#address-input").value,
+    companyCity : document.querySelector("#city-input").value,
+    companyState : document.querySelector("#state-input").value
   }
 
   console.log(attendee);

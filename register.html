@@ -96,7 +96,7 @@
               <div class="row">
                 <div class="col-12">
                   <div class="form-container">
-                    <form id="register-form">
+                    <form onsubmit="return false;" id="register-form">
                       <div class="registration-intro">
                         <p>Interested in joining us? Submit the form below, and <strong>get your free access</strong> to the conference.</p>
                         <p>Should you have any questions regarding the event and the registration, please feel free to contact us, via email:</p>
@@ -138,7 +138,7 @@
                       </div>
                       <div class="text-container">
                         <label id="address-label">Address: </label>
-                        <textarea required name="address-field" placeholder="123 Sesame Street, Suite 900"></textarea>
+                        <textarea id="address-input" required name="address-field" placeholder="123 Sesame Street, Suite 900"></textarea>
                       </div>
                       <div class="field-container">
                         <label id="city-label">City:</label>

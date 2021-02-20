@@ -121,7 +121,16 @@ if(document.getElementById("register-form"))
 //function to get the user's registration datas
 function getAttendeeInfos()
 {
-  console.log("hello attendee !! ");
+
+  const attendee = {
+    firstName : document.querySelector("#first-name-input").value,
+    lastName : document.querySelector("#last-name-input").value,
+    title : document.querySelector("#job-title-input").value,
+    email : document.querySelector("#email-input").value,
+    phone : document.querySelector("#phone-input").value
+  }
+
+  console.log(attendee);
 }
 
 

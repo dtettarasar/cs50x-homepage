@@ -105,9 +105,23 @@ if(document.getElementById("register-form"))
   otherTopicsCheckBox = document.querySelector("#other-topics-checkbox");
   otherTopicsText = document.querySelector("#other-topics-text");
 
+  const submitBtn = document.querySelector("#submit");
+
+  submitBtn.addEventListener("click", function(evnt)
+  {
+    evnt.preventDefault();
+    getAttendeeInfos();
+  });
+
   // addEventListeners
   otherTopicsText.addEventListener("input", otherTopicsCheck);
   otherTopicsCheckBox.addEventListener("click", textFocus);
+}
+
+//function to get the user's registration datas
+function getAttendeeInfos()
+{
+  console.log("hello attendee !! ");
 }
 
 

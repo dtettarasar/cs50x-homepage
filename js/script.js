@@ -122,6 +122,20 @@ if(document.getElementById("register-form"))
 function getAttendeeInfos()
 {
 
+  //get the workshop chosen by the attendee
+  const radioWs = document.getElementsByName("workshop-selection");
+  let chosenWorkshop = "";
+  for(let i = 0; i < radioWs.length; i++)
+  {
+    if (radioWs[i].checked)
+    {
+      chosenWorkshop = radioWs[i].value;
+      //only one radio can be checked, so we stop the loop once we've found the checked one
+      break;
+    }
+  }
+
+  // build the object that record every infos submitted by the attendee on registration
   const attendee = {
     firstName : document.querySelector("#first-name-input").value,
     lastName : document.querySelector("#last-name-input").value,
@@ -131,7 +145,9 @@ function getAttendeeInfos()
     companyName : document.querySelector("#company-input").value,
     companyAddress : document.querySelector("#address-input").value,
     companyCity : document.querySelector("#city-input").value,
-    companyState : document.querySelector("#state-input").value
+    companyState : document.querySelector("#state-input").value,
+    companyZipCode : document.querySelector("#zip-code-input").value,
+    workShopChoice : chosenWorkshop
   }
 
   console.log(attendee);

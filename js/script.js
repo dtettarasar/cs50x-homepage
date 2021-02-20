@@ -110,7 +110,8 @@ if(document.getElementById("register-form"))
   submitBtn.addEventListener("click", function(evnt)
   {
     evnt.preventDefault();
-    getAttendeeInfos();
+    const attendee = getAttendeeInfos();
+    checkSubmission(attendee);
   });
 
   // addEventListeners
@@ -123,7 +124,7 @@ function getAttendeeInfos()
 {
 
   //get the workshop chosen by the attendee
-  const radioWs = document.getElementsByName("workshop-selection");
+  const radioWs = document.querySelectorAll(".workshop-selection");
   let chosenWorkshop = "";
   for(let i = 0; i < radioWs.length; i++)
   {
@@ -150,7 +151,17 @@ function getAttendeeInfos()
     workShopChoice : chosenWorkshop
   }
 
-  console.log(attendee);
+  return attendee;
+
+}
+
+//function to check the submission
+function checkSubmission(obj)
+{
+  console.log(obj);
+
+  // TODO
+  // to check if every value are valid. if not alert + write on the form the errors to check
 }
 
 

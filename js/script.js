@@ -99,7 +99,6 @@ let otherTopicsCheckBox;
 let otherTopicsText;
 
 // only execute the script if the form is on the page
-
 if(document.getElementById("register-form"))
 {
   otherTopicsCheckBox = document.querySelector("#other-topics-checkbox");
@@ -150,6 +149,28 @@ function getTxtAreaValue(txtAreaInput)
   return txt;
 }
 
+//function to get checkboxes value
+function getCheckBoxesValue(checkboxNodeList)
+{
+  let checkboxesArray = [];
+  for (let i = 0; i < checkboxNodeList.length; i++)
+  {
+    if(checkboxNodeList[i].checked)
+    {
+      checkboxesArray.push(checkboxNodeList[i].value);
+    }
+  }
+
+  //if nothing has been chosen
+  if(checkboxesArray.length == 0)
+  {
+    checkboxesArray.push("none");
+  }
+
+  return checkboxesArray;
+
+}
+
 //function to get the user's registration datas
 function getAttendeeInfos()
 {
@@ -164,31 +185,16 @@ function getAttendeeInfos()
 
   //get the topics chosen by the attendee
   const checkboxTopics = document.querySelectorAll(".topic-selection");
+  let topicsArray = getCheckBoxesValue(checkboxTopics);
+
+  //get the other topics chosen by the attendee
   const otherTopicsField = document.querySelector("#other-topics-text");
-  let otherTopicsTxt = "";
-  let topicsArray = [];
-  for(let i = 0; i < checkboxTopics.length; i++)
-  {
-    if (checkboxTopics[i].checked)
-    {
-      topicsArray.push(checkboxTopics[i].value);
-    }
-  }
+  let otherTopicsTxt = getTxtAreaValue(otherTopicsField);
 
   //if nothing has been chosen
   if (topicsArray.length == 0)
   {
     topicsArray.push("topic-none");
-  }
-
-  // if the attendee mentionned other topics or not
-  if(otherTopicsField.value == "")
-  {
-    otherTopicsTxt = "none";
-  }
-  else
-  {
-    otherTopicsTxt = otherTopicsField.value;
   }
 
   //get the food allergies & intolerances
@@ -198,6 +204,11 @@ function getAttendeeInfos()
   //check if attendee is vegan or not
   const radioVegan = document.querySelectorAll(".vegan");
   let chosenVeganOption = getRadioValue(radioVegan);
+
+  //get the comment
+  const commentField = document.querySelector("#comment-input");
+  let commentTxt = getTxtAreaValue(commentField);
+
 
   // build the object that record every infos submitted by the attendee on registration
   const attendee = 
@@ -216,7 +227,8 @@ function getAttendeeInfos()
     topicsChoice : topicsArray,
     otherTopics : otherTopicsTxt,
     allergies : allergiesTxt,
-    vegan : chosenVeganOption
+    vegan : chosenVeganOption,
+    comment : commentTxt
   }
 
   return attendee;

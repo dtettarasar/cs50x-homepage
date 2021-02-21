@@ -136,6 +136,22 @@ function getAttendeeInfos()
     }
   }
 
+  //get the topics chosen by the attendee
+  const checkboxTopics = document.querySelectorAll(".topic-selection");
+  const otherTopicsTxt = document.querySelector("#other-topics-text");
+  let topicsArray = [];
+  for(let i = 0; i < checkboxTopics.length; i++)
+  {
+    if (checkboxTopics[i].checked)
+    {
+      topicsArray.push(checkboxTopics[i].value);
+    }
+  }
+
+  //check if there's other topics mentionned by the attendee
+
+  console.log(otherTopicsTxt.value);
+
   // build the object that record every infos submitted by the attendee on registration
   const attendee = {
     firstName : document.querySelector("#first-name-input").value,
@@ -148,7 +164,8 @@ function getAttendeeInfos()
     companyCity : document.querySelector("#city-input").value,
     companyState : document.querySelector("#state-input").value,
     companyZipCode : document.querySelector("#zip-code-input").value,
-    workShopChoice : chosenWorkshop
+    workShopChoice : chosenWorkshop,
+    topicsChoice : topicsArray
   }
 
   return attendee;

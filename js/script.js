@@ -101,9 +101,6 @@ let otherTopicsText;
 // only execute the script if the form is on the page
 if(document.getElementById("register-form"))
 {
-  otherTopicsCheckBox = document.querySelector("#other-topics-checkbox");
-  otherTopicsText = document.querySelector("#other-topics-text");
-
   const submitBtn = document.querySelector("#submit");
 
   submitBtn.addEventListener("click", function(evnt)
@@ -113,9 +110,6 @@ if(document.getElementById("register-form"))
     checkSubmission(attendee);
   });
 
-  // addEventListeners
-  otherTopicsText.addEventListener("input", otherTopicsCheck);
-  otherTopicsCheckBox.addEventListener("click", textFocus);
 }
 
 //function to get radio value
@@ -242,31 +236,6 @@ function checkSubmission(obj)
 
   // TODO
   // to check if every value are valid. if not : alert + write on the form the errors to check
-}
-
-
-// function to focus on the other topics' text field, if you check its box
-function textFocus()
-{
-  if(otherTopicsCheckBox.checked)
-  {
-    otherTopicsText.focus();
-  }
-}
-
-// function to check or uncheck the box, depending on the text field's content
-function otherTopicsCheck()
-{
-  if(otherTopicsText.value == "")
-  {
-    // if text field empty : uncheck the box
-    otherTopicsCheckBox.checked = false;
-  }
-  else
-  {
-    // if there's something typed in the text field, check the box
-    otherTopicsCheckBox.checked = true;
-  }
 }
 
 // end of script for the registration form

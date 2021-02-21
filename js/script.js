@@ -98,22 +98,6 @@ if(document.getElementById("figures-section"))
 let otherTopicsCheckBox;
 let otherTopicsText;
 
-//function to get radio value
-function getRadioValue(radioInput)
-{
-  let chosenRadio = "";
-  for (let i = 0; i < radioInput.length; i++)
-  {
-    if(radioInput[i].checked)
-    {
-      chosenRadio = radioInput[i].value;
-      //only one radio can be checked, so we stop the loop once we've found the checked one
-      break;
-    }
-  }
-  return chosenRadio;
-}
-
 // only execute the script if the form is on the page
 
 if(document.getElementById("register-form"))
@@ -135,9 +119,44 @@ if(document.getElementById("register-form"))
   otherTopicsCheckBox.addEventListener("click", textFocus);
 }
 
+//function to get radio value
+function getRadioValue(radioInput)
+{
+  let chosenRadio = "";
+  for (let i = 0; i < radioInput.length; i++)
+  {
+    if(radioInput[i].checked)
+    {
+      chosenRadio = radioInput[i].value;
+      //only one radio can be checked, so we stop the loop once we've found the checked one
+      break;
+    }
+  }
+  return chosenRadio;
+}
+
+//function to get text area value
+function getTxtAreaValue(txtAreaInput)
+{
+  let txt = "";
+  if(txtAreaInput.value == "")
+  {
+    txt = "none";
+  }
+  else
+  {
+    txt = txtAreaInput.value;
+  }
+  return txt;
+}
+
 //function to get the user's registration datas
 function getAttendeeInfos()
 {
+
+  //get the company address
+  const addressField = document.querySelector("#address-input");
+  let addressTxt = getTxtAreaValue(addressField);
 
   //get the workshop chosen by the attendee
   const radioWs = document.querySelectorAll(".workshop-selection");
@@ -174,15 +193,7 @@ function getAttendeeInfos()
 
   //get the food allergies & intolerances
   let allergiesField = document.querySelector("#allergies-input");
-  let  allergiesTxt = "";
-  if(allergiesField.value == "")
-  {
-    allergiesTxt = "none";
-  }
-  else
-  {
-    allergiesTxt = allergiesField.value;
-  }
+  let allergiesTxt = getTxtAreaValue(allergiesField);
 
   //check if attendee is vegan or not
   const radioVegan = document.querySelectorAll(".vegan");
@@ -197,7 +208,7 @@ function getAttendeeInfos()
     email : document.querySelector("#email-input").value,
     phone : document.querySelector("#phone-input").value,
     companyName : document.querySelector("#company-input").value,
-    companyAddress : document.querySelector("#address-input").value,
+    companyAddress : addressTxt,
     companyCity : document.querySelector("#city-input").value,
     companyState : document.querySelector("#state-input").value,
     companyZipCode : document.querySelector("#zip-code-input").value,
@@ -218,7 +229,7 @@ function checkSubmission(obj)
   console.log(obj);
 
   // TODO
-  // to check if every value are valid. if not alert + write on the form the errors to check
+  // to check if every value are valid. if not : alert + write on the form the errors to check
 }
 
 

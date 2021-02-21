@@ -98,6 +98,22 @@ if(document.getElementById("figures-section"))
 let otherTopicsCheckBox;
 let otherTopicsText;
 
+//function to get radio value
+function getRadioValue(radioInput)
+{
+  let chosenRadio = "";
+  for (let i = 0; i < radioInput.length; i++)
+  {
+    if(radioInput[i].checked)
+    {
+      chosenRadio = radioInput[i].value;
+      //only one radio can be checked, so we stop the loop once we've found the checked one
+      break;
+    }
+  }
+  return chosenRadio;
+}
+
 // only execute the script if the form is on the page
 
 if(document.getElementById("register-form"))
@@ -125,16 +141,7 @@ function getAttendeeInfos()
 
   //get the workshop chosen by the attendee
   const radioWs = document.querySelectorAll(".workshop-selection");
-  let chosenWorkshop = "";
-  for(let i = 0; i < radioWs.length; i++)
-  {
-    if (radioWs[i].checked)
-    {
-      chosenWorkshop = radioWs[i].value;
-      //only one radio can be checked, so we stop the loop once we've found the checked one
-      break;
-    }
-  }
+  let chosenWorkshop = getRadioValue(radioWs);
 
   //get the topics chosen by the attendee
   const checkboxTopics = document.querySelectorAll(".topic-selection");
@@ -177,6 +184,10 @@ function getAttendeeInfos()
     allergiesTxt = allergiesField.value;
   }
 
+  //check if attendee is vegan or not
+  const radioVegan = document.querySelectorAll(".vegan");
+  let chosenVeganOption = getRadioValue(radioVegan);
+
   // build the object that record every infos submitted by the attendee on registration
   const attendee = 
   {
@@ -193,7 +204,8 @@ function getAttendeeInfos()
     workShopChoice : chosenWorkshop,
     topicsChoice : topicsArray,
     otherTopics : otherTopicsTxt,
-    allergies : allergiesTxt
+    allergies : allergiesTxt,
+    vegan : chosenVeganOption
   }
 
   return attendee;

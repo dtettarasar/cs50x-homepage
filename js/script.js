@@ -138,7 +138,8 @@ function getAttendeeInfos()
 
   //get the topics chosen by the attendee
   const checkboxTopics = document.querySelectorAll(".topic-selection");
-  const otherTopicsTxt = document.querySelector("#other-topics-text");
+  const otherTopicsField = document.querySelector("#other-topics-text");
+  let otherTopicsTxt = "";
   let topicsArray = [];
   for(let i = 0; i < checkboxTopics.length; i++)
   {
@@ -148,9 +149,23 @@ function getAttendeeInfos()
     }
   }
 
-  //check if there's other topics mentionned by the attendee
+  //if nothing has been chosen
+  if (checkboxTopics.length == 0)
+  {
+    topicsArray.push("topic-none");
+  }
 
-  console.log(otherTopicsTxt.value);
+  // if the attendee mentionned other topics or not
+  if(otherTopicsField.value == "")
+  {
+    otherTopicsTxt = "none";
+  }
+  else
+  {
+    otherTopicsTxt = otherTopicsField.value;
+  }
+
+  //get the food allergies & intolerances
 
   // build the object that record every infos submitted by the attendee on registration
   const attendee = {
@@ -165,7 +180,8 @@ function getAttendeeInfos()
     companyState : document.querySelector("#state-input").value,
     companyZipCode : document.querySelector("#zip-code-input").value,
     workShopChoice : chosenWorkshop,
-    topicsChoice : topicsArray
+    topicsChoice : topicsArray,
+    otherTopics : otherTopicsTxt
   }
 
   return attendee;

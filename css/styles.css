@@ -401,12 +401,19 @@ input, select
   font-size:1.1rem;
 }
 
-input:invalid
+.required-input:invalid
 {
   border: 3px dashed #c0392b;
 }
 
-input:valid
+.required-star
+{
+  color: #c0392b;
+  font-weight: 700;
+  display: contents;
+}
+
+.required-input:valid
 {
   border: 3px solid #27ae60;
 }

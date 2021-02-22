@@ -108,24 +108,24 @@
                         <p class="form-section-heading">About you</p>
                       </div>
                       <div class="field-container">
-                        <label id="first-name-label">First Name:</label>
-                        <input required pattern="[A-Z][A-Za-z' -]+" id='first-name-input' type="text" name="first-name" placeholder="Oscar">
+                        <label id="first-name-label">First Name <span class="required-star">*</span></label>
+                        <input class="required-input" required pattern="[A-Z][A-Za-z' -]+" id='first-name-input' type="text" name="first-name" placeholder="Oscar">
                       </div>
                       <div class="field-container">
-                        <label id="last-name-label">Last Name:</label>
-                        <input required pattern="[A-Z][A-Za-z' -]+" id='last-name-input' type="text" name="last-name" placeholder="The Grouch">
+                        <label id="last-name-label">Last Name <span class="required-star">*</span></label>
+                        <input class="required-input" required pattern="[A-Z][A-Za-z' -]+" id='last-name-input' type="text" name="last-name" placeholder="The Grouch">
                       </div>
                       <div class="field-container">
-                        <label id="job-title-label">Job Title:</label>
-                        <input required id='job-title-input' type="text" name="job-title" placeholder="Programmer (and CS50 fan)">
+                        <label id="job-title-label">Job Title <span class="required-star">*</span></label>
+                        <input class="required-input" required id='job-title-input' type="text" name="job-title" placeholder="Programmer (and CS50 fan)">
                       </div>
                       <div class="field-container">
-                        <label id="email-label" for="email">Email:</label>
-                        <input id="email-input" type="email" name="email" placeholder='oscar@sesame.com' required />
+                        <label id="email-label" for="email">Email <span class="required-star">*</span></label>
+                        <input class="required-input" required id="email-input" type="email" name="email" placeholder='oscar@sesame.com' required />
                       </div>
                       <div class="field-container">
-                        <label id="phone-label" for="phone">Phone number:</label>
-                        <input type="tel" id="phone-input" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="123-456-7890">
+                        <label id="phone-label" for="phone">Phone number <span class="required-star">*</span></label>
+                        <input class="required-input" required type="tel" id="phone-input" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="123-456-7890">
                       </div>
                       <div class="separator-line"></div>
                       <div>
@@ -133,24 +133,24 @@
                         <p class="form-section-heading">Your company</p>
                       </div>
                       <div class="field-container">
-                        <label id="company-label">Company:</label>
-                        <input required id='company-input' type="text" name="company" placeholder="Sesame Workshop">
+                        <label id="company-label">Company <span class="required-star">*</span></label>
+                        <input class="required-input" required id='company-input' type="text" name="company" placeholder="Sesame Workshop">
                       </div>
                       <div class="text-container">
-                        <label id="address-label">Address: </label>
-                        <textarea id="address-input" required name="address-field" placeholder="123 Sesame Street, Suite 900"></textarea>
+                        <label id="address-label">Address <span class="required-star">*</span></label>
+                        <textarea class="required-input" id="address-input" required name="address-field" placeholder="123 Sesame Street, Suite 900"></textarea>
                       </div>
                       <div class="field-container">
-                        <label id="city-label">City:</label>
-                        <input required id='city-input' type="text" name="city" placeholder="Manhattan">
+                        <label id="city-label">City <span class="required-star">*</span></label>
+                        <input class="required-input" required id='city-input' type="text" name="city" placeholder="Manhattan">
                       </div>
                       <div class="field-container">
-                        <label id="state-label">State:</label>
-                        <input required id='state-input' type="text" name="state" placeholder="New York">
+                        <label id="state-label">State</label>
+                        <input id='state-input' type="text" name="state" placeholder="New York">
                       </div>
                       <div class="field-container">
-                        <label id="zip-code-label">ZIP Code:</label>
-                        <input required id='zip-code-input' type="text" name="zip-code" placeholder="10050">
+                        <label id="zip-code-label">ZIP Code <span class="required-star">*</span></label>
+                        <input class="required-input" required id='zip-code-input' type="text" name="zip-code" placeholder="10050">
                       </div>
                       <div class="separator-line"></div>
                       <div>
@@ -159,7 +159,7 @@
                       </div>
                       <div class="radio-container">
                         <div>
-                          <p class="workshops-label">Which workshop do you want to participate in?</p>
+                          <p class="workshops-label">Which workshop do you want to participate in? <span class="required-star">*</span></p>
                         </div>
                         <input type="radio" name="workshop-selection" class="workshop-selection" value="ws1"> <strong>Workshop 1</strong> : Game and Cloud Computing <br>
                         <input type="radio" name="workshop-selection" class="workshop-selection" value="ws2"> <strong>Workshop 2</strong> : Game and Open Source Technologies <br>
@@ -192,7 +192,7 @@
                       </div>
                       <div class="radio-container">
                         <div>
-                          <p class="workshops-label">Are you vegan?</p>
+                          <p class="workshops-label">Are you vegan? <span class="required-star">*</span></p>
                         </div>
                         <input type="radio" class="vegan" name="vegan" value="yes"> Yes<br>
                         <input type="radio" class="vegan" name="vegan" value="no"> No<br>

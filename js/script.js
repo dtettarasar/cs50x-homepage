@@ -129,16 +129,16 @@ function getRadioValue(radioInput)
 }
 
 //function to get text area value
-function getTxtAreaValue(txtAreaInput)
+function getTxtValue(txtInput)
 {
   let txt = "";
-  if(txtAreaInput.value == "")
+  if(txtInput.value == "")
   {
     txt = "none";
   }
   else
   {
-    txt = txtAreaInput.value;
+    txt = txtInput.value;
   }
   return txt;
 }
@@ -169,9 +169,13 @@ function getCheckBoxesValue(checkboxNodeList)
 function getAttendeeInfos()
 {
 
+  //get the attendee First Name
+  const firstNameField = document.querySelector("#first-name-input");
+  let firstNameTxt = getTxtValue(firstNameField);
+
   //get the company address
   const addressField = document.querySelector("#address-input");
-  let addressTxt = getTxtAreaValue(addressField);
+  let addressTxt = getTxtValue(addressField);
 
   //get the workshop chosen by the attendee
   const radioWs = document.querySelectorAll(".workshop-selection");
@@ -183,7 +187,7 @@ function getAttendeeInfos()
 
   //get the other topics chosen by the attendee
   const otherTopicsField = document.querySelector("#other-topics-text");
-  let otherTopicsTxt = getTxtAreaValue(otherTopicsField);
+  let otherTopicsTxt = getTxtValue(otherTopicsField);
 
   //if nothing has been chosen
   if (topicsArray.length == 0)
@@ -193,7 +197,7 @@ function getAttendeeInfos()
 
   //get the food allergies & intolerances
   let allergiesField = document.querySelector("#allergies-input");
-  let allergiesTxt = getTxtAreaValue(allergiesField);
+  let allergiesTxt = getTxtValue(allergiesField);
 
   //check if attendee is vegan or not
   const radioVegan = document.querySelectorAll(".vegan");
@@ -201,13 +205,13 @@ function getAttendeeInfos()
 
   //get the comment
   const commentField = document.querySelector("#comment-input");
-  let commentTxt = getTxtAreaValue(commentField);
+  let commentTxt = getTxtValue(commentField);
 
 
   // build the object that record every infos submitted by the attendee on registration
   const attendee = 
   {
-    firstName : document.querySelector("#first-name-input").value,
+    firstName : firstNameTxt,
     lastName : document.querySelector("#last-name-input").value,
     title : document.querySelector("#job-title-input").value,
     email : document.querySelector("#email-input").value,

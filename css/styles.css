@@ -472,7 +472,7 @@ textarea
 }
 
 /*required-error-msg*/
-p[class^="required-error-msg"]
+.error-msg
 {
     width:100%;
     font-weight: 700;

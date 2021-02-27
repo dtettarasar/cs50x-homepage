@@ -194,6 +194,23 @@ function getAttendeeInfos()
 
 }
 
+//function to display error message
+function errorMsg(containerClass, msg, classMsg)
+{
+  // check if the message is already displayed
+  const msgSelector = "." + containerClass + "-field ." + classMsg;
+  console.log(msgSelector);
+  if(!document.querySelector(msgSelector))
+  {
+    const containerField = document.querySelector("." + containerClass + "-field");
+    const pElem = document.createElement("p");
+    const errorTxt = document.createTextNode(msg);
+    pElem.setAttribute("class","error-msg " + classMsg);
+    pElem.appendChild(errorTxt);
+    containerField.appendChild(pElem);
+  }
+}
+
 //function to check the submission
 function checkSubmission(obj)
 {
@@ -206,6 +223,14 @@ function checkSubmission(obj)
     "email",
     "phone"
   ];
+
+  for (let i = 0; i< requiredFields.length; i++)
+  {
+    if (obj[requiredFields[i]] == "none")
+    {
+      errorMsg(requiredFields[i], "Please fill in this field.", "required");
+    }
+  }
 
   console.log(obj);
 

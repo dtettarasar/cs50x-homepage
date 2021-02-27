@@ -128,7 +128,7 @@ function getRadioValue(radioInput)
   return chosenRadio;
 }
 
-//function to get text area value
+//function to get text field value
 function getTxtValue(txtInput)
 {
   let txt = "";
@@ -172,22 +172,22 @@ function getAttendeeInfos()
   // build the object that record every infos submitted by the attendee on registration
   const attendee = 
   {
-    firstName : getTxtValue(document.querySelector("#first-name-input")),
-    lastName : getTxtValue(document.querySelector("#last-name-input")),
-    title : getTxtValue(document.querySelector("#job-title-input")),
-    email : getTxtValue(document.querySelector("#email-input")),
-    phone : getTxtValue(document.querySelector("#phone-input")),
-    companyName : getTxtValue(document.querySelector("#company-input")),
-    companyAddress : getTxtValue(document.querySelector("#address-input")),
-    companyCity : getTxtValue(document.querySelector("#city-input")),
-    companyState : getTxtValue(document.querySelector("#state-input")),
-    companyZipCode : getTxtValue(document.querySelector("#zip-code-input")),
-    workShopChoice : getRadioValue(document.querySelectorAll(".workshop-selection")),
-    topicsChoice : getCheckBoxesValue(document.querySelectorAll(".topic-selection")),
-    otherTopics : getTxtValue(document.querySelector("#other-topics-text")),
-    allergies : getTxtValue(document.querySelector("#allergies-input")),
-    vegan : getRadioValue(document.querySelectorAll(".vegan")),
-    comment : getTxtValue(document.querySelector("#comment-input"))
+    "first-name" : getTxtValue(document.querySelector("#first-name-input")),
+    "last-name" : getTxtValue(document.querySelector("#last-name-input")),
+    "title" : getTxtValue(document.querySelector("#job-title-input")),
+    "email" : getTxtValue(document.querySelector("#email-input")),
+    "phone" : getTxtValue(document.querySelector("#phone-input")),
+    "company-name" : getTxtValue(document.querySelector("#company-input")),
+    "company-address" : getTxtValue(document.querySelector("#address-input")),
+    "company-city" : getTxtValue(document.querySelector("#city-input")),
+    "company-state" : getTxtValue(document.querySelector("#state-input")),
+    "company-zip-code" : getTxtValue(document.querySelector("#zip-code-input")),
+    "workshop-choice" : getRadioValue(document.querySelectorAll(".workshop-selection")),
+    "topics-choice" : getCheckBoxesValue(document.querySelectorAll(".topic-selection")),
+    "other-topics" : getTxtValue(document.querySelector("#other-topics-text")),
+    "allergies" : getTxtValue(document.querySelector("#allergies-input")),
+    "vegan" : getRadioValue(document.querySelectorAll(".vegan")),
+    "comment" : getTxtValue(document.querySelector("#comment-input"))
   }
 
   return attendee;
@@ -197,6 +197,16 @@ function getAttendeeInfos()
 //function to check the submission
 function checkSubmission(obj)
 {
+
+  //list in the array, the object properties that stores required values
+  const requiredFields = [
+    "first-name",
+    "last-name",
+    "title",
+    "email",
+    "phone"
+  ];
+
   console.log(obj);
 
   // TODO

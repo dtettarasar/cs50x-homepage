@@ -429,26 +429,31 @@ input, select
   margin: 10px auto;
 }
 
-.field-container, [class*="label"] {
+.field-container, [class*="label"] 
+{
   display:flex;
   flex-wrap: wrap;
   align-items: center;
 }
 
-.field-container input {
+.field-container input 
+{
   flex:1 0 250px;
 }
 
-.field-container *, [class*="label"] p {
+.field-container *, [class*="label"] p 
+{
    margin:5px;
 }
 
-.field-container i, [class*="label"] i {
+.field-container i, [class*="label"] i 
+{
   font-size:34px;
   flex: 0 0 40px;
 }
 
-#submit {
+#submit 
+{
   background-color: #3498db;
   color: #ecf0f1;
   border:none;
@@ -459,10 +464,20 @@ input, select
   display: block;
 }
 
-textarea {
+textarea 
+{
   font-size:18px;
   display:block;
   width:100%;
+}
+
+/*required-error-msg*/
+p[class^="required-error-msg"]
+{
+    width:100%;
+    font-weight: 700;
+    color: #c0392b;
+    /*display: none;*/
 }
 
 /* end of style for register page */

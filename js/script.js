@@ -199,9 +199,9 @@ function errorMsg(containerClass, msg, classMsg)
 {
   // check if the message is already displayed
   const msgSelector = "." + containerClass + "-field ." + classMsg;
-  console.log(msgSelector);
   if(!document.querySelector(msgSelector))
   {
+    //create the HTML Element for the error message
     const containerField = document.querySelector("." + containerClass + "-field");
     const pElem = document.createElement("p");
     const errorTxt = document.createTextNode(msg);
@@ -221,7 +221,11 @@ function checkSubmission(obj)
     "last-name",
     "title",
     "email",
-    "phone"
+    "phone", 
+    "company-name",
+    "company-address",
+    "company-city",
+    "company-zip-code"
   ];
 
   for (let i = 0; i< requiredFields.length; i++)

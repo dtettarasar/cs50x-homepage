@@ -94,10 +94,6 @@ if(document.getElementById("figures-section"))
 
 // script for the registration form
 
-// var to get checkbox and text field's element
-let otherTopicsCheckBox;
-let otherTopicsText;
-
 // only execute the script if the form is on the page
 if(document.getElementById("register-form"))
 {
@@ -124,6 +120,10 @@ function getRadioValue(radioInput)
       //only one radio can be checked, so we stop the loop once we've found the checked one
       break;
     }
+  }
+  if(!chosenRadio)
+  {
+    chosenRadio = "none";
   }
   return chosenRadio;
 }
@@ -169,64 +169,25 @@ function getCheckBoxesValue(checkboxNodeList)
 function getAttendeeInfos()
 {
 
-  //get the attendee First Name
-  const firstNameField = document.querySelector("#first-name-input");
-  let firstNameTxt = getTxtValue(firstNameField);
-
-  //get the company address
-  const addressField = document.querySelector("#address-input");
-  let addressTxt = getTxtValue(addressField);
-
-  //get the workshop chosen by the attendee
-  const radioWs = document.querySelectorAll(".workshop-selection");
-  let chosenWorkshop = getRadioValue(radioWs);
-
-  //get the topics chosen by the attendee
-  const checkboxTopics = document.querySelectorAll(".topic-selection");
-  let topicsArray = getCheckBoxesValue(checkboxTopics);
-
-  //get the other topics chosen by the attendee
-  const otherTopicsField = document.querySelector("#other-topics-text");
-  let otherTopicsTxt = getTxtValue(otherTopicsField);
-
-  //if nothing has been chosen
-  if (topicsArray.length == 0)
-  {
-    topicsArray.push("topic-none");
-  }
-
-  //get the food allergies & intolerances
-  let allergiesField = document.querySelector("#allergies-input");
-  let allergiesTxt = getTxtValue(allergiesField);
-
-  //check if attendee is vegan or not
-  const radioVegan = document.querySelectorAll(".vegan");
-  let chosenVeganOption = getRadioValue(radioVegan);
-
-  //get the comment
-  const commentField = document.querySelector("#comment-input");
-  let commentTxt = getTxtValue(commentField);
-
-
   // build the object that record every infos submitted by the attendee on registration
   const attendee = 
   {
-    firstName : firstNameTxt,
-    lastName : document.querySelector("#last-name-input").value,
-    title : document.querySelector("#job-title-input").value,
-    email : document.querySelector("#email-input").value,
-    phone : document.querySelector("#phone-input").value,
-    companyName : document.querySelector("#company-input").value,
-    companyAddress : addressTxt,
-    companyCity : document.querySelector("#city-input").value,
-    companyState : document.querySelector("#state-input").value,
-    companyZipCode : document.querySelector("#zip-code-input").value,
-    workShopChoice : chosenWorkshop,
-    topicsChoice : topicsArray,
-    otherTopics : otherTopicsTxt,
-    allergies : allergiesTxt,
-    vegan : chosenVeganOption,
-    comment : commentTxt
+    firstName : getTxtValue(document.querySelector("#first-name-input")),
+    lastName : getTxtValue(document.querySelector("#last-name-input")),
+    title : getTxtValue(document.querySelector("#job-title-input")),
+    email : getTxtValue(document.querySelector("#email-input")),
+    phone : getTxtValue(document.querySelector("#phone-input")),
+    companyName : getTxtValue(document.querySelector("#company-input")),
+    companyAddress : getTxtValue(document.querySelector("#address-input")),
+    companyCity : getTxtValue(document.querySelector("#city-input")),
+    companyState : getTxtValue(document.querySelector("#state-input")),
+    companyZipCode : getTxtValue(document.querySelector("#zip-code-input")),
+    workShopChoice : getRadioValue(document.querySelectorAll(".workshop-selection")),
+    topicsChoice : getCheckBoxesValue(document.querySelectorAll(".topic-selection")),
+    otherTopics : getTxtValue(document.querySelector("#other-topics-text")),
+    allergies : getTxtValue(document.querySelector("#allergies-input")),
+    vegan : getRadioValue(document.querySelectorAll(".vegan")),
+    comment : getTxtValue(document.querySelector("#comment-input"))
   }
 
   return attendee;
@@ -240,6 +201,9 @@ function checkSubmission(obj)
 
   // TODO
   // to check if every value are valid. if not : alert + write on the form the errors to check
+
+  //if every value are valids 
+  return true;
 }
 
 // end of script for the registration form

@@ -72,7 +72,7 @@ function execAnimation(sectionTop)
       for (let j = 0; j < numbersArray.length; j++)
       {
         counterAnimation(counterNodeList[j], j);
-        console.log(j);
+        //console.log(j);
       }
       counterDone = true;
     }
@@ -261,8 +261,21 @@ function checkSubmission(obj)
 
   // Check if values with specific format are valid. if not : write on the form the errors to check
 
+  // check email address
+  // regex taken from https://regexlib.com/REDetails.aspx?regexp_id=174
+  const validMail = checkValueFormat(obj["email"], "^.+@[^\.].*\.[a-z]{2,}$");
+
+  if(!validMail)
+  {
+    errorMsg("email", "Please enter a valid email: example@email.com", "format", false);
+  }
+  else
+  {
+    errorMsg("email", "", "format", true);
+  }
+
   // check phone number
-  let validPhone = checkValueFormat(obj["phone"], "[0-9]{3}-[0-9]{3}-[0-9]{4}");
+  const validPhone = checkValueFormat(obj["phone"], "[0-9]{3}-[0-9]{3}-[0-9]{4}");
 
   if(!validPhone)
   {

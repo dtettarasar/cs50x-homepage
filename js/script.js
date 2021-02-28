@@ -195,11 +195,13 @@ function getAttendeeInfos()
 }
 
 //function to display error message
-function errorMsg(containerClass, msg, classMsg)
+function errorMsg(containerClass, msg, classMsg, validField)
 {
-  // check if the message is already displayed
+  // get the class name for the error message HTML Element. We need it to handle its creation and display
   const msgSelector = "." + containerClass + "-field ." + classMsg;
-  if(!document.querySelector(msgSelector))
+
+  //if the field isn't valid and if the error message isn't already displayed : we create and display the error message 
+  if(!document.querySelector(msgSelector) && !validField)
   {
     //create the HTML Element for the error message
     const containerField = document.querySelector("." + containerClass + "-field");
@@ -209,6 +211,12 @@ function errorMsg(containerClass, msg, classMsg)
     pElem.appendChild(errorTxt);
     containerField.appendChild(pElem);
   }
+}
+
+//function to check if the values respect the right format
+function checkValueFormat(objProp, regEx)
+{
+  // TODO
 }
 
 //function to check the submission
@@ -225,14 +233,17 @@ function checkSubmission(obj)
     "company-name",
     "company-address",
     "company-city",
-    "company-zip-code"
+    "company-zip-code",
+    "workshop-choice",
+    "vegan"
   ];
 
+  // check if the required fields have values
   for (let i = 0; i< requiredFields.length; i++)
   {
     if (obj[requiredFields[i]] == "none")
     {
-      errorMsg(requiredFields[i], "Please fill in this field.", "required");
+      errorMsg(requiredFields[i], "Please fill in this field.", "required", false);
     }
   }
 

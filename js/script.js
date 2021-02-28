@@ -199,17 +199,22 @@ function errorMsg(containerClass, msg, classMsg, validField)
 {
   // get the class name for the error message HTML Element. We need it to handle its creation and display
   const msgSelector = "." + containerClass + "-field ." + classMsg;
+  const containerField = document.querySelector("." + containerClass + "-field");
 
   //if the field isn't valid and if the error message isn't already displayed : we create and display the error message 
   if(!document.querySelector(msgSelector) && !validField)
   {
     //create the HTML Element for the error message
-    const containerField = document.querySelector("." + containerClass + "-field");
     const pElem = document.createElement("p");
     const errorTxt = document.createTextNode(msg);
     pElem.setAttribute("class","error-msg " + classMsg);
     pElem.appendChild(errorTxt);
     containerField.appendChild(pElem);
+  }
+  //if the field is valid and the error message is displayed : remove the error message
+  else if(document.querySelector(msgSelector) && validField)
+  {
+    containerField.removeChild(document.querySelector(msgSelector));
   }
 }
 
@@ -244,6 +249,10 @@ function checkSubmission(obj)
     if (obj[requiredFields[i]] == "none")
     {
       errorMsg(requiredFields[i], "Please fill in this field.", "required", false);
+    }
+    else
+    {
+      errorMsg(requiredFields[i], "", "required", true);
     }
   }
 

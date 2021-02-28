@@ -219,9 +219,10 @@ function errorMsg(containerClass, msg, classMsg, validField)
 }
 
 //function to check if the values respect the right format
-function checkValueFormat(objProp, regEx)
+function checkValueFormat(objProp, format)
 {
-  // TODO
+  const regEx = new RegExp(format);
+  return regEx.test(objProp);
 }
 
 //function to check the submission
@@ -258,8 +259,19 @@ function checkSubmission(obj)
 
   console.log(obj);
 
-  // TODO
-  // to check if every value are valid. if not : alert + write on the form the errors to check
+  // Check if values with specific format are valid. if not : write on the form the errors to check
+
+  // check phone number
+  let validPhone = checkValueFormat(obj["phone"], "[0-9]{3}-[0-9]{3}-[0-9]{4}");
+
+  if(!validPhone)
+  {
+    errorMsg("phone", "Please enter a valid phone number: 000-000-0000", "format", false);
+  }
+  else
+  {
+    errorMsg("phone", "", "format", true);
+  }
 
   //if every value are valids 
   return true;

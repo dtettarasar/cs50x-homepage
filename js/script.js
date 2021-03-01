@@ -286,6 +286,18 @@ function checkSubmission(obj)
     errorMsg("phone", "", "format", true);
   }
 
+  //check company zip code
+  const validZipCode = checkValueFormat(obj["company-zip-code"], "^\\d{5}$");
+  
+  if(!validZipCode)
+  {
+    errorMsg("company-zip-code", "Please enter a valid ZIP Code: 00000", "format", false);
+  }
+  else
+  {
+    errorMsg("company-zip-code", "", "format", true);
+  }
+
   //if every value are valids 
   return true;
 }

@@ -480,6 +480,12 @@ textarea
     /*display: none;*/
 }
 
+/*sucess message section*/
+.form-success
+{
+    display:none;
+}
+
 /* end of style for register page */
 
 /* style for go to top button */

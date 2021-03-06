@@ -104,7 +104,12 @@ if(document.getElementById("register-form"))
     evnt.preventDefault();
     const attendeeData = getAttendeeInfos();
     const validData = checkSubmission(attendeeData);
-    console.log(validData);
+
+    if(validData)
+    {
+      displaySuccessMsg();
+      console.log(attendeeData);
+    }
 
   });
 
@@ -259,8 +264,6 @@ function checkSubmission(obj)
     }
   }
 
-  console.log(obj);
-
   // Check if values with specific format are valid. if not : write on the form the errors to check
 
   // check email address
@@ -277,7 +280,7 @@ function checkSubmission(obj)
   }
 
   // check phone number
-  const validPhone = checkValueFormat(obj["phone"], "[0-9]{3}-[0-9]{3}-[0-9]{4}");
+  const validPhone = checkValueFormat(obj["phone"], "[0-9]{3}-[0-9]{3}-[0-9]{4}$");
 
   if(!validPhone)
   {
@@ -312,6 +315,15 @@ function checkSubmission(obj)
     return false;
   }
 
+}
+
+function displaySuccessMsg()
+{
+  const sucessSection = document.querySelector(".form-success");
+  const formSection = document.querySelector(".form-container");
+  
+  formSection.style.display = "none";
+  sucessSection.style.display = "block";
 }
 
 // end of script for the registration form

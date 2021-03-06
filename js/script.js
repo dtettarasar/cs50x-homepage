@@ -102,8 +102,10 @@ if(document.getElementById("register-form"))
   submitBtn.addEventListener("click", function(evnt)
   {
     evnt.preventDefault();
-    const attendee = getAttendeeInfos();
-    checkSubmission(attendee);
+    const attendeeData = getAttendeeInfos();
+    const validData = checkSubmission(attendeeData);
+    console.log(validData);
+
   });
 
 }
@@ -298,8 +300,18 @@ function checkSubmission(obj)
     errorMsg("company-zip-code", "", "format", true);
   }
 
-  //if every value are valids 
-  return true;
+  //check if there's any error detected in the form
+  let getErrors = document.querySelectorAll("p[class^='error-msg']");
+
+  if(getErrors.length == 0)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+
 }
 
 // end of script for the registration form

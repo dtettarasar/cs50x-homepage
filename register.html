@@ -120,12 +120,12 @@
                         <input class="required-input" required id='job-title-input' type="text" name="job-title" placeholder="Programmer (and CS50 fan)">
                       </div>
                       <div class="email-field field-container">
-                        <label id="email-label" for="email">Email <span class="required-star">*</span></label>
-                        <input class="required-input" required id="email-input" type="email" name="email" pattern="^.+@[^\.].*\.[a-z]{2,}$" placeholder='oscar@sesame.com' required />
+                        <label id="email-label" for="email-input">Email <span class="required-star">*</span></label>
+                        <input class="required-input" id="email-input" type="email" name="email" pattern="^.+@[^\.].*\.[a-z]{2,}$" placeholder='oscar@sesame.com' required />
                       </div>
                       <div class="phone-field field-container">
-                        <label id="phone-label" for="phone">Phone number <span class="required-star">*</span></label>
-                        <input class="required-input" required type="tel" id="phone-input" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="123-456-7890">
+                        <label id="phone-label" for="phone-input">Phone number <span class="required-star">*</span></label>
+                        <input class="required-input" type="tel" id="phone-input" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="123-456-7890">
                       </div>
                       <div class="separator-line"></div>
                       <div>
@@ -171,18 +171,18 @@
                         </div>
                         <div>
                           <input type="checkbox" id="topic-programming" value="topic-programming" class="topic-selection" name="topic-selection">
-                          <label for="topics">Programming</label>
+                          <label for="topic-programming">Programming</label>
                         </div>
                         <div>
                           <input type="checkbox" id="topic-art" value="topic-art" class="topic-selection" name="topic-selection">
-                          <label for="topics">Art</label>
+                          <label for="topic-art">Art</label>
                         </div>
                         <div>
                           <input type="checkbox" id="topic-ux-design" value="topic-ux-design" class="topic-selection" name="topic-selection">
-                          <label for="topics">UX Design</label>
+                          <label for="topic-ux-design">UX Design</label>
                         </div>
                         <div>
-                          <label for="topics">Other: please specify</label>
+                          <label for="other-topics-text">Other: please specify</label>
                           <input type="text" id="other-topics-text" name="other-text" />
                         </div>
                       </div>
